@@ -1,3 +1,5 @@
+RUN apt-get clean && apt-get update
+
 # Inherit from Heroku's stack
 FROM heroku/heroku:18-build
 
