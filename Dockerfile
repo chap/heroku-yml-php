@@ -65,7 +65,7 @@ extension=xsl.so\n\
 " >> /app/.heroku/php/etc/php/php.ini
 
 # Install Composer
-RUN curl --silent --location "https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/composer-1.8.6.tar.gz" | tar xz -C /app/.heroku/php
+RUN curl --silent --location "https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/composer-1.9.1.tar.gz" | tar xz -C /app/.heroku/php
 
 # copy dep files first so Docker caches the install step if they don't change
 ONBUILD COPY composer.lock /app/user/
