@@ -9,6 +9,8 @@ ENV PHP_VERSION 7.3.7
 ENV HTTPD_VERSION 2.4.39
 ENV NGINX_VERSION 1.16.0
 
+Add . .
+
 # Create some needed directories
 RUN mkdir -p /app/.heroku/php /app/.profile.d
 WORKDIR /app/user
