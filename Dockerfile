@@ -17,7 +17,7 @@ WORKDIR /app/user
 ENV PATH /app/.heroku/php/bin:/app/.heroku/php/sbin:$PATH
 
 # Install Apache
-RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/apache-2.4.39.tar.gz | tar xz -C /app/.heroku/php
+RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/apache-2.4.41.tar.gz | tar xz -C /app/.heroku/php
 # Config
 RUN curl --silent --location https://raw.githubusercontent.com/heroku/heroku-buildpack-php/ded7e8a02e472387fb9cdb98e84b7f82d8eb3b91/conf/apache2/httpd.conf.default > /app/.heroku/php/etc/apache2/httpd.conf
 # FPM socket permissions workaround when run as root
