@@ -17,7 +17,7 @@ WORKDIR /app/user
 ENV PATH /app/.heroku/php/bin:/app/.heroku/php/sbin:$PATH
 
 # Install Apache
-RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/apache-$HTTPD_VERSION.tar.gz | tar xz -C /app/.heroku/php
+RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/apache-2.4.39.tar.gz | tar xz -C /app/.heroku/php
 # Config
 RUN curl --silent --location https://raw.githubusercontent.com/heroku/heroku-buildpack-php/ded7e8a02e472387fb9cdb98e84b7f82d8eb3b91/conf/apache2/httpd.conf.default > /app/.heroku/php/etc/apache2/httpd.conf
 # FPM socket permissions workaround when run as root
@@ -26,7 +26,7 @@ Group root\n\
 " >> /app/.heroku/php/etc/apache2/httpd.conf
 
 # Install Nginx
-RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/nginx-$NGINX_VERSION.tar.gz | tar xz -C /app/.heroku/php
+RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/nginx-1.16.0.tar.gz | tar xz -C /app/.heroku/php
 # Config
 RUN curl --silent --location https://raw.githubusercontent.com/heroku/heroku-buildpack-php/ded7e8a02e472387fb9cdb98e84b7f82d8eb3b91/conf/nginx/nginx.conf.default > /app/.heroku/php/etc/nginx/nginx.conf
 # FPM socket permissions workaround when run as root
@@ -35,7 +35,7 @@ user nobody root;\n\
 " >> /app/.heroku/php/etc/nginx/nginx.conf
 
 # Install PHP
-RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/php-$PHP_VERSION.tar.gz | tar xz -C /app/.heroku/php
+RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-heroku-18-develop/php-7.3.7.tar.gz | tar xz -C /app/.heroku/php
 # Config
 RUN mkdir -p /app/.heroku/php/etc/php/conf.d
 RUN curl --silent --location https://raw.githubusercontent.com/heroku/heroku-buildpack-php/ded7e8a02e472387fb9cdb98e84b7f82d8eb3b91/conf/php/php.ini > /app/.heroku/php/etc/php/php.ini
