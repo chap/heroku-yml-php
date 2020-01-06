@@ -1,7 +1,5 @@
 # Inherit from Heroku's stack
-FROM heroku/heroku:18-build
-
-RUN apt-get clean && apt-get update
+FROM heroku/heroku:18
 
 # Internally, we arbitrarily use port 3000
 ENV PORT 3000
